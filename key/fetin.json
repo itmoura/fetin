@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "flucy-fetin",
+  "private_key_id": "5adc3efc2397d89c392bc48f8100194d686b30d4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDFEuweR6iUV3bZ\nTDy5VUiS0qD13s6IK6qmBgUbFz8OOJqvgLnRPerRrradhlxyGbR1mfM6vmE6pUbs\nygZjBRsn2qRMzV3OCP7qskg/IeiLmy8LnDkgE21zk+8DhvnAO6x1wAFRNYxUr/j0\nyll0rlx9bg/wyxEHgkJL1zxK5f2Ikvioy+NSlTXQeaKw/ut88dzGhdP1SOju8bO/\nUn5P0cMJDTewykMu5Xu0wadfl0RbNRQMciIf864AP9GQB2xXYwboqWRSCuiDaOzh\nMH5pgOZ+2xUIajBJvSHvJ1PJgldKSSkI7YAG6zshKDu/QuifCGzWih1sqenzxQsJ\nnpaZeZtbAgMBAAECggEAH9u7vPdjmrt69IzdAi71wPp419Zxd9TrTNSLTcJXyLJA\n219JariCNexzDAsU9cMPB7Xf+p6dNDBUw2GzX52LMsmnJt1KLU0J/KHeiQovwCXR\nmKRkHbnWR0liaaUPydI7wntMGzc3XNdnvRbbGEA5pnM883W4ZojZs83zKr58Wm/z\nMadELusbIfacckYKVY60veF7cKoMNzU+W7+4e4c8BH7FMYCcX3UKwixCQ01jOQWl\nairkVo7maDMcfaIWdVduiC58rHOl7wfcCSKFuIYjKuz5hA1R00N9wk88DluRPeJW\nctgznD8eoPYkttPEbPWwhBcVD2aEg1vTQoUwgsnVGQKBgQDt9y/rzyrNnMpewNPZ\noCeJ8htMF4801WlxxG5kcHa7A6PqM/wgsBizYU+1pujg4z3mytZtN+lLQX/Dqky7\nlOU9LbGlG1Q7BqnZyBe8WKubxN9sQyuZRfSTaUr40qupkPFTK80srMmE5fh2/XF9\n9WtOy2/ouxcbR3JThFdI+TnQ8wKBgQDUAmODSFQ2LotDlBf3R7++q1Uy3haREY8t\n0Ng7MBrNvs+O19iKRpwcsAPVMeffdCBv/P0V2fvXE+n5K9mLhohHLBzgq2dBTZWS\nfPBWB5sskaaX1+P97M7yilTG/B2GBkov5Hr88dk/oob4aEGskB5VCF6Y0MEqw13t\nBbVqW1zl+QKBgCFl5fXkl49QCB8QVStgDOyRbD9btx+lLC1pckzqc99/fUvri+FS\nlcTnTXajPGADxLZVlY6yoC2Nvc7KYgaZuSrC9QHFOicmokQMjzhCAaPVF75sFvxm\nExN1Xa5acvlTfGs95If2oDnkxOB+ZaVWAn+GkehKCc4sUuFh25ZEVFb9AoGAY/NQ\nWQdTdEvTKiP6fIEd+9UokJe1ieT+XHo2RwkxycfocI6ALwiE9t1goTUq/OTxmfpq\nks+29DoWN3udzzK4st0wLBeC0X2zQ2GVqOljFcsBAFsuyHrJQf1HZJxdit8SQKv1\n86RNaLvF5/y24ZT8R9hvSJo6R1/duy3SznaOQHkCgYAWn0CDn7Jpi1gjOmn8jRoD\nC7Yfh69kBLNRKEzHOiD2T9DYQph5A9Bg0ZUDild0009U7BnGeaPEkQQnHSCZogUk\nAVdjGxkkP67BpERZx89TzqOB3E0HMqDw+mrpflYgBnzYHDSZpUw+2aNhpt2xMNMx\nbrW0aYihPfynq0s1hZJgnA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "flucy-415@flucy-fetin.iam.gserviceaccount.com",
+  "client_id": "116379119719589138049",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/flucy-415%40flucy-fetin.iam.gserviceaccount.com"
+}
