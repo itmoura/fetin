@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
@@ -11,6 +13,25 @@ from selenium.webdriver.support import expected_conditions as EC
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+import _thread
+
+# Define a function for the thread
+def print_time( threadName, delay):
+    count = 0
+    while count < 5:
+        time.sleep(delay)
+        count += 1
+        print ("%s: %s" % ( threadName, time.ctime(time.time()) ))
+
+# Create two threads as follows
+try:
+    _thread.start_new_thread( print_time, ("Thread-1", 2, ) )
+    _thread.start_new_thread( print_time, ("Thread-2", 4, ) )
+except:
+    print ("Error: unable to start thread")
+
+while 1:
+    pass
 
 # ref = db.reference('server/saving-data/fireblog')
 
@@ -21,20 +42,20 @@ from firebase_admin import db
 #     "storageBucket": "fetin-99767.appspot.com"
 # }
 
-cred = credentials.Certificate('C:/Users/itmoura/IdeaProjects/fetin/key/fetin/fetin-99767.json')
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://project-8664234487.firebaseio.com'
-})
-#
-ref = db.reference('fetin-99767')
-users_ref = ref.child('users')
-users_ref.set({
-    '0kdIEeSAwGnkMRIGMkj9a': {
-        'name': "Italo",
-        'idade': 20
-    }
-})
-print(ref.get())
+# cred = credentials.Certificate('C:/Users/itmoura/IdeaProjects/fetin/key/fetin/fetin-99767.json')
+# firebase_admin.initialize_app(cred, {
+#     'databaseURL': 'https://project-8664234487.firebaseio.com'
+# })
+# #
+# ref = db.reference('fetin-99767')
+# users_ref = ref.child('users')
+# users_ref.set({
+#     '0kdIEeSAwGnkMRIGMkj9a': {
+#         'name': "Italo",
+#         'idade': 20
+#     }
+# })
+# print(ref.get())
 
 # Start navegador firefox
 # browser = webdriver.Firefox(executable_path = '/Users/itmoura/Documents/geckodriver')

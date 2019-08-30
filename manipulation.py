@@ -1,4 +1,6 @@
 from connection import Connection
+import json
+from collections import OrderedDict
 
 class Manipulation:
     def __init__(self, db, idToken):
@@ -18,6 +20,7 @@ class Manipulation:
         idToken = self.idToken
         db = self.db
         list = db.child(banco).get(idToken).val()
+        # listOrder = json.dumps(list, sort_keys=True)
         return list
 
     def listInfo(self, banco, id):

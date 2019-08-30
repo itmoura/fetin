@@ -1,20 +1,39 @@
+# -*- coding: utf-8 -*-
+
 from manipulation import Manipulation
+# from open import Open
+import _thread
+import time
+from open import Open
+
+controller = Manipulation("db", "idToken")
 
 class main:
-    controller = Manipulation("db", "idToken")
-
     # TODOS AS 'TABELAS'
     bc = "contact"
     bcom = "command"
+    bcar = "car"
     ba = "aprendizado"
 
     # salvando no bd
-    dados = {"read": "Floquinho, Quantos anos voce tem?", "write": "Eu tenho 2 anos"}
-    controller.register(ba, dados)
+    dados = {"execute": "assistir vaui se foder"}
+    controller.register(bcom, dados)
 
-    list = controller.list(bc)
-    for id in list:
-        result = controller.listInfo(bc, id)
-        username = result.get(u'username')
-        read = result.get(u'read')
-        print read, username
+    # list = controller.list(bcom)
+    # print (list)
+    # op = Open()
+    # for id in list:
+    #     result = controller.listInfo(bcom, id)
+    #     print(result)
+        # execute = result.get(u'execute')
+        # quebrar = execute.split(' ')
+        # tam = len(quebrar)
+        # if quebrar[0] == "Assistir":
+        #     i = 1
+        #     palavra = ""
+        #     while i < tam:
+        #         palavra = palavra + quebrar[i] + " "
+        #         i += 1
+        #     op.youtube(palavra)
+
+    # op.discordAdd("itmoura#6974")
