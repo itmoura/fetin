@@ -3,28 +3,26 @@ import json
 from collections import OrderedDict
 
 class Manipulation:
-    def __init__(self, db, idToken):
+    def __init__(self, db):
         # Conecta com Banco
         con = Connection
         self.db = con.db
-        self.idToken = con.idToken
 
     # Registra dados
     def register(self, banco, dados):
-        idToken = self.idToken
         db = self.db
-        db.child(banco).push(dados, idToken)
+        db.child(banco).push(dados)
 
     # Ler dados
     def list(self, banco):
-        idToken = self.idToken
         db = self.db
-        list = db.child(banco).get(idToken).val()
-        # listOrder = json.dumps(list, sort_keys=True)
-        return list
+        list = db.child(banco).get().val()
+        if(list != None):
+            return list
+        else:
+            return 0
 
     def listInfo(self, banco, id):
-        idToken = self.idToken
         db = self.db
-        list = db.child(banco).child(id).get(idToken).val()
+        list = db.child(banco).child(id).get().val()
         return list

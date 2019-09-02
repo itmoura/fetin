@@ -1,37 +1,39 @@
 # coding: utf-8
+#
+# import time
+# from selenium import webdriver
+# from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.common.keys import Keys
+# import pyrebase
+# import json
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# # BANCO
+# import firebase_admin
+# from firebase_admin import credentials
+# from firebase_admin import db
+# import _thread
 
-import time
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-import pyrebase
-import json
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-# BANCO
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import db
-import _thread
+
 
 # Define a function for the thread
-def print_time( threadName, delay):
-    count = 0
-    while count < 5:
-        time.sleep(delay)
-        count += 1
-        print ("%s: %s" % ( threadName, time.ctime(time.time()) ))
-
-# Create two threads as follows
-try:
-    _thread.start_new_thread( print_time, ("Thread-1", 2, ) )
-    _thread.start_new_thread( print_time, ("Thread-2", 4, ) )
-except:
-    print ("Error: unable to start thread")
-
-while 1:
-    pass
+# def print_time( threadName, delay):
+#     count = 0
+#     while count < 5:
+#         time.sleep(delay)
+#         count += 1
+#         print ("%s: %s" % ( threadName, time.ctime(time.time()) ))
+#
+# # Create two threads as follows
+# try:
+#     _thread.start_new_thread( print_time, ("Thread-1", 2, ) )
+#     _thread.start_new_thread( print_time, ("Thread-2", 4, ) )
+# except:
+#     print ("Error: unable to start thread")
+#
+# while 1:
+#     pass
 
 # ref = db.reference('server/saving-data/fireblog')
 

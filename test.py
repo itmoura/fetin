@@ -4,9 +4,9 @@
 import time
 
 class Test:
-
     def motor(self, pos):
         print("teste aqui", pos)
+        return pos
         #Configuring don’t show warnings
         # gpio.setwarnings(False)
         #

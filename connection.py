@@ -16,11 +16,11 @@ class Connection:
     firebase = pyrebase.initialize_app(config)
 
     # autentificação
-    auth = firebase.auth()
-    user = auth.sign_in_with_email_and_password("flucyfetin38@gmail.com", "fetin*38")
+    # auth = firebase.auth()
+    # user = auth.sign_in_with_email_and_password("flucyfetin38@gmail.com", "fetin*38")
 
     # idToken
-    idToken = user['idToken']
+    # idToken = user['idToken']
 
     db = firebase.database()
 

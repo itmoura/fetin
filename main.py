@@ -2,11 +2,10 @@
 
 from manipulation import Manipulation
 # from open import Open
-import _thread
 import time
 from open import Open
 
-controller = Manipulation("db", "idToken")
+controller = Manipulation("db")
 
 class main:
     # TODOS AS 'TABELAS'
@@ -14,17 +13,19 @@ class main:
     bcom = "command"
     bcar = "car"
     ba = "aprendizado"
+    bt = "teach"
 
     # salvando no bd
-    dados = {"execute": "assistir vaui se foder"}
-    controller.register(bcom, dados)
+    dados = {"letra": "B", "descricao": "Eu vou falar aqui tudo sobre a letra B!"}
+    controller.register('teach/portugues', dados)
 
     # list = controller.list(bcom)
     # print (list)
     # op = Open()
-    # for id in list:
-    #     result = controller.listInfo(bcom, id)
-    #     print(result)
+
+    # for key in sorted((list.keys()), reverse=True):
+    #     result = list[key]
+    #     print(result.get(u'execute'))
         # execute = result.get(u'execute')
         # quebrar = execute.split(' ')
         # tam = len(quebrar)
