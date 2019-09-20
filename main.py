@@ -16,12 +16,14 @@ class main:
     bt = "teach"
 
     # salvando no bd
-    dados = {"letra": "B", "descricao": "Eu vou falar aqui tudo sobre a letra B!"}
-    controller.register('teach/portugues', dados)
+    # dados = {"letra": "B", "descricao": "Eu vou falar aqui tudo sobre a letra B!"}
+    # controller.register('teach/portugues', dados)
 
     # list = controller.list(bcom)
     # print (list)
-    # op = Open()
+    op = Open()
+
+    op.youtube("Luccas Neto")
 
     # for key in sorted((list.keys()), reverse=True):
     #     result = list[key]

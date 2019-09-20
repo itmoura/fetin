@@ -16,6 +16,37 @@
 # import _thread
 
 
+import pyttsx3
+# pt = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_PT-BR_PAULINA_11.0"
+engine = pyttsx3.init()
+# engine.setProperty('voice', pt)
+engine.say('teste voz')
+engine.runAndWait()
+print ("sai")
+#
+# import os
+# os.system("espeak -vpt --stdout 'Bem vindo ao site do caderno de laboratorio.' | aplay" )
+
+# from gtts import gTTS
+# from playsound import playsound
+#
+# tts = gTTS("Isso eh um teste de outro", lang='pt-br')
+# #Salva o arquivo de audio
+# tts.save('audio/hello.mp3')
+# print("Estou aprendendo o que você disse...")
+# #Da play ao audio
+# playsound("audio/hello.mp3")
+# engine = pyttsx3.init()
+# voices = engine.getProperty('voices')
+# for voice in voices:
+#     print("Voice:")
+#     print(" - ID: %s" % voice.id)
+#     print(" - Name: %s" % voice.name)
+#     print(" - Languages: %s" % voice.languages)
+#     print(" - Gender: %s" % voice.gender)
+#     print(" - Age: %s" % voice.age)
+
+
 
 # Define a function for the thread
 # def print_time( threadName, delay):

@@ -27,6 +27,8 @@ class myThread (threading.Thread):
         print ("Starting " + self.banco)
         print_time(self.banco, self.counter, 1, cad)
         print ("Exiting " + self.name)
+    def kill(self):
+        self.killed = True
 
 def print_time(threadName, delay, counter, cad):
     while counter:
@@ -48,20 +50,39 @@ def print_time(threadName, delay, counter, cad):
                         if(threadName == "car"):
                             move = result.get(u'move')
                             outroTest = test.motor(move)
-                            print outroTest
+                            print (outroTest)
                         elif(threadName == "command"):
                             execute = result.get(u'execute')
                             quebrar = execute.split(" ")
                             tam = len(quebrar)
                             if(quebrar[0] == "assistir"):
-                                # op = Open()
+                                if thread2.isAlive():
+                                    print ("Matei thread2")
+                                    thread2.kill()
+                                elif threadaux.isAlive():
+                                    print ("Matei AUX")
+                                    threadaux.kill()
+                                op = Open()
                                 x = 1
                                 palavra = ""
                                 while x < tam:
                                     palavra = palavra + quebrar[x] + " "
                                     x += 1
-                                print(palavra)
-                                # op.youtube(palavra)
+                                if thread2.isAlive():
+                                    print ("Deixei vivo AUX")
+                                    threadaux.start()
+                                elif threadaux.isAlive():
+                                    print ("Deixei vivo 2")
+                                    thread2.start()
+                                op.youtube(palavra)
+                            elif(quebrar[0] == "pesquisar"):
+                                op = Open()
+                                x = 1
+                                palavra = ""
+                                while x < tam:
+                                    palavra = palavra + quebrar[x] + " "
+                                    x += 1
+                                op.google(palavra)
                             elif(quebrar[0] == "aprender"):
                                 if(tam > 1):
                                     if(quebrar[1] == "portugues"):
@@ -72,13 +93,19 @@ def print_time(threadName, delay, counter, cad):
                                                 qLetra = letra.get(u'letra')
                                                 if(qLetra == quebrar[3]):
                                                     descricaoLetra = letra.get(u'descricao')
-                                                    print descricaoLetra
-                                                    faleDescricao = voice.fala(descricaoLetra)
-                                                    print faleDescricao
+                                                    print (descricaoLetra)
+                                                    voice.fala(descricaoLetra)
                                         else:
-                                            faleDescricao = voice.fala("Voce nao informou uma letra para aprender")
+                                            voice.fala("Voce nao informou uma letra para aprender")
                                 else:
-                                    faleDescricao = voice.fala("Você não disse o que deseja aprender")
+                                    voice.fala("Você não disse o que deseja aprender")
+                            elif(quebrar[0] == "ligar"):
+                                x = 1
+                                palavra = ""
+                                while x < tam:
+                                    palavra = palavra + quebrar[x] + " "
+                                    x += 1
+                                print ("estou ligando para ", palavra)
                 fim = aux
                 i += 1
         counter += 1
@@ -86,10 +113,12 @@ def print_time(threadName, delay, counter, cad):
 # Create new threads
 thread1 = myThread(1, "car", 1, 1)
 thread2 = myThread(2, "command", 1.5, 1)
+threadaux = myThread(3, "command", 1.5, 1)
 
 # Start new Threads
 thread1.start()
 thread2.start()
 thread1.join()
 thread2.join()
+threadaux.join()
 print ("Exiting Main Thread")

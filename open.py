@@ -9,24 +9,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 
-# Start navegador firefox
-# /Users/itmoura/Desktop/chrome-win/chrome
-# myprofile = webdriver.FirefoxProfile(r'C:/Users/itmoura/AppData/Roaming/Mozilla/Firefox/Profiles/ucsv42th.default-release')
-# options = webdriver.ChromeOptions()
-# options.add_argument("--kiosk") chrome_options=options
-
-# browser.manage().window().maximize()
-
-delay1 = 5
-delay2 = 7
+delay1 = 2
+delay2 = 5
 
 class Open:
-
     def youtube(self, search):
-        browser = webdriver.Chrome( executable_path = '/Users/itmoura/Documents/chromedriver')
-        act = ActionChains(browser)
+        browser = webdriver.Firefox()
         youtube = "https://www.youtube.com"
         browser.get(youtube)
+        act = ActionChains(browser)
         time.sleep(delay2)
         browser.find_element_by_id("search-button").click()
         time.sleep(delay1)
@@ -36,7 +27,7 @@ class Open:
 
         # Da enter para pesquisar
         act.send_keys(Keys.ENTER).perform()
-        time.sleep(delay2)
+        time.sleep(delay1)
 
         # Espera um tempinho
         # wait.until(visible((By.ID, "text")))
@@ -51,17 +42,20 @@ class Open:
         num = randrange(qntVideo)
 
         # abre um video de acordo com o num aleatorio
-        browser.get(linkVideo[num])
+        browser.get(linkVideo[qntVideo-1])
+
+        print (linkVideo)
+        print (linkVideo[qntVideo-1])
 
         # Espera até q o "video-title" apareça
         time.sleep(delay2)
         browser.find_element_by_id("video-title").click()
 
         # Coloca em modo "teatro"
-        act.send_keys(Keys.CONTROL + "t").perform()
+        act.send_keys("t").perform()
 
     def google(self, search):
-        browser = webdriver.Chrome( executable_path = '/Users/itmoura/Documents/chromedriver')
+        browser = webdriver.Firefox()
         act = ActionChains(browser)
         google = "https://www.google.com/imghp"
         browser.get(google)
@@ -71,7 +65,7 @@ class Open:
         act.send_keys(Keys.ENTER).perform()
 
     def discordAdd(self, add):
-        browser = webdriver.Chrome( executable_path = '/Users/itmoura/Documents/chromedriver')
+        browser = webdriver.Firefox()
         discord = "https://discordapp.com/channels/@me"
         browser.get(discord)
         act = ActionChains(browser)
@@ -87,7 +81,7 @@ class Open:
         browser.quit()
 
     def ligar(self):
-        browser = webdriver.Chrome( executable_path = '/Users/itmoura/Documents/chromedriver')
+        browser = webdriver.Firefox()
         act = ActionChains(browser)
         discord = "https://discordapp.com/channels/@me"
         browser.get(discord)
@@ -96,14 +90,14 @@ class Open:
 
         linkChat = [i.get_attribute('href') for i in browser.find_elements_by_css_selector('a')]
 
-        print linkChat
+        print (linkChat)
         for i in linkChat:
             quebra = i.split('/')
             if(len(quebra) > 2):
                 if(quebra[3] == "channels") and (quebra[4] == "@me") and (len(quebra) > 4):
                     novaQuebra = i.split("@me")
                     if(len(novaQuebra) > 1):
-                        print novaQuebra[1]
+                        print (novaQuebra[1])
         # act.move_by_offset(831,124).click().perform()
 
         # Da enter para pesquisar
